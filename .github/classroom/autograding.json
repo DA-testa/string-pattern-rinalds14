@@ -1,0 +1,54 @@
+{
+  "tests": [
+    {
+      "name": "inst",
+      "setup": "",
+      "run": "pip install -r ./.github/workflows/requirements.txt",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 2,
+      "points": 0
+    },
+    {
+      "name": "Sample 1",
+      "setup": "",
+      "run": "python hash_substring.py",
+      "input": "I\r\naba\r\nabacaba",
+      "output": "0 4",
+      "comparison": "exact",
+      "timeout": 1,
+      "points": 1
+    },
+    {
+      "name": "Sample 2",
+      "setup": "",
+      "run": "python hash_substring.py",
+      "input": "I\r\nTest\r\ntestTesttesT",
+      "output": "4",
+      "comparison": "exact",
+      "timeout": 1,
+      "points": 1
+    },
+    {
+      "name": "Sample 3",
+      "setup": "",
+      "run": "python hash_substring.py",
+      "input": "I\r\naaaaa\r\nbaaaaaaa",
+      "output": "1 2 3",
+      "comparison": "exact",
+      "timeout": 1,
+      "points": 1
+    },
+    {
+      "name": "Test 06",
+      "setup": "",
+      "run": "python hash_substring.py",
+      "input": "F",
+      "output": "19 118 178 241 296 361 417 472 ",
+      "comparison": "exact",
+      "timeout": 1,
+      "points": 1
+    }
+  ]
+}
