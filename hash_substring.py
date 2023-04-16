@@ -1,7 +1,7 @@
 def read_input():
     input_type = input().strip().upper()
     if input_type == 'F':
-        with open('input.txt', 'r') as f:
+        with open('tests/06', 'r') as f:
             pattern = f.readline().strip()
             text = f.readline().strip()
     if input_type == "I":
