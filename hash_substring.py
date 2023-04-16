@@ -9,8 +9,10 @@ def read_input():
         text = input().strip()
     return pattern, text
 
+
 def print_occurrences(output):
     print(' '.join(map(str, output)))
+
 
 def get_occurrences(pattern, text):
     p = 10**9 + 7
@@ -19,12 +21,12 @@ def get_occurrences(pattern, text):
     n = len(text)
     m = len(pattern)
     hashes = [None] * (n - m + 1)
-    s = text[n - m:]
-    hashes[n - m] = sum(ord(s[i]) * pow(x, i, p) for i in range(m)) % p
+    hashes[n - m] = sum(ord(text[i]) * pow(x, i, p) for i in range(n - m, n)) % p
     factor = pow(x, m - 1, p)
     for i in range(n - m - 1, -1, -1):
         hashes[i] = (x * hashes[i + 1] + ord(text[i]) - factor * ord(text[i + m])) % p
     return [i for i in range(n - m + 1) if hashes[i] == pattern_hash]
+
 
 if __name__ == '__main__':
     print_occurrences(get_occurrences(*read_input()))
