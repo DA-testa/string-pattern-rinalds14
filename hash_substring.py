@@ -9,6 +9,7 @@ def read_input():
         pattern = input().strip()
         text = input().strip()
 
+    return pattern, text
 
 
 def print_occurrences(output):
